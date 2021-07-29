@@ -7,7 +7,13 @@ namespace Consume_SP_Incidencia.Controllers
 {
     public class Consulta_CompletosConIncidenciaController : ApiController
     {
+        // POST: api/Consulta_CompletosConIncidenciaController
         [HttpPost]
+        /// <summary>
+        /// Consumo del SP prc_Consulta_CompletosConIncidencia
+        /// </summary>
+        /// <param name="context">Json de Créditos para consultar por SP</param>
+        /// <returns></returns>
         public IHttpActionResult Get(JsonRequest context)
         {
             Helper obj = new Helper();

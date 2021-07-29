@@ -1,15 +1,18 @@
 ﻿using System.Web.Http;
-using System.Data;
-using System.Data.SqlClient;
 using System.Configuration;
 using Consume_SP_Incidencia.Models.Request;
 using System.Collections.Generic;
-
 
 namespace Consume_SP_Incidencia.Controllers
 {
     public class Consulta_FaltantesConIncidenciaController : ApiController
     {
+        /// <summary>
+        /// Consumo del SP Consulta_FaltantesConIncidenciaController
+        /// </summary>
+        /// <param name="context">Json de Créditos para consultar por SP</param>
+        /// <returns></returns>
+        // POST: api/Consulta_FaltantesConIncidenciaController
         [HttpPost]
         public IHttpActionResult Get(JsonRequest context)
         {

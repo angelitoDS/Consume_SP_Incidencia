@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using Consume_SP_Incidencia.Models.Request;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace Consume_SP_Incidencia.Controllers
 {
@@ -20,6 +21,7 @@ namespace Consume_SP_Incidencia.Controllers
                         if (sqlConnection.State == ConnectionState.Open)
                         {
                             sc.CommandType = CommandType.StoredProcedure;
+                            sc.CommandTimeout = int.Parse(ConfigurationManager.AppSettings.Get("executionTimeout"));
                             using (SqlDataReader sqlDataReader = sc.ExecuteReader())
                             {
                                 if (sqlDataReader != null && sqlDataReader.FieldCount > 0)
@@ -56,6 +58,7 @@ namespace Consume_SP_Incidencia.Controllers
                         if (sqlConnection.State == ConnectionState.Open)
                         {
                             sc.CommandType = CommandType.StoredProcedure;
+                            sc.CommandTimeout = int.Parse(ConfigurationManager.AppSettings.Get("executionTimeout"));
                             using (SqlDataReader sqlDataReader = sc.ExecuteReader())
                             {
                                 if (sqlDataReader != null && sqlDataReader.FieldCount > 0)
